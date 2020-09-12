@@ -10,6 +10,7 @@ data/config.py
 data/database.db
 
 # vscode
+.vscode
 .vscode/*
 !.vscode/settings.json
 .history/
