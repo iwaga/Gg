@@ -95,7 +95,7 @@ async def process_add_product(message: Message):
 
     await ProductState.title.set()
 
-    markup = ReplyKeyboardMarkup()
+    markup = ReplyKeyboardMarkup(resize_keyboard=True)
     markup.add(cancel_message)
 
     await message.answer('Название?', reply_markup=markup)
