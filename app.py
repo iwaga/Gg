@@ -15,7 +15,7 @@ admin_message = 'Админ'
 @dp.message_handler(commands='start')
 async def cmd_start(message: types.Message):
 
-    markup = ReplyKeyboardMarkup()
+    markup = ReplyKeyboardMarkup(resize_keyboard=True)
 
     markup.row(user_message, admin_message)
 
