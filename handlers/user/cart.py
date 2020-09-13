@@ -52,7 +52,7 @@ async def process_cart(message: Message, state: FSMContext):
                                            reply_markup=markup)
 
         if order_cost != 0:
-            markup = ReplyKeyboardMarkup(selective=True)
+            markup = ReplyKeyboardMarkup(resize_keyboard=True, selective=True)
             markup.add('📦 Оформить заказ')
 
             await message.answer('Перейти к оформлению?',
