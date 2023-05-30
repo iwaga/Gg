@@ -1,4 +1,6 @@
-# Store-bot
+<p align="center">
+  <a href="https://t.me/example_store_bot"><img src="data/assets/logo.png" alt="ShopBot"></a>
+</p>
 
 Это пример телеграм магазин-бота. Простой, а главное эффективный способ оформить заказ, не выходя из любимого мессенджера. 
 
