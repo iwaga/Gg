@@ -2,12 +2,16 @@
 __pycache__/
 
 # Project files
-.idea/
-*.log
-.env
-*.session
-data/config.py
 data/database.db
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
 # vscode
 .vscode/
