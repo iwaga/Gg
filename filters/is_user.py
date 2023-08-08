@@ -1,9 +1,12 @@
-
 from aiogram.types import Message
-from aiogram.dispatcher.filters import BoundFilter
+from aiogram.filters import BaseFilter
 from data.config import ADMINS
 
-class IsUser(BoundFilter):
+class IsUser(BaseFilter):
 
-    async def check(self, message: Message):
-        return message.from_user.id not in ADMINS
+    def __init__(self) -> None:
+        self.admins = ADMINS
+        
+    async def __call__(self, message: Message) -> bool:
+        cid: str = message.from_user.id
+        return cid not in self.admins
