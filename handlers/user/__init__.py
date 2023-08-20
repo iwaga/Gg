@@ -1,8 +1,17 @@
-from .menu import dp
-from .cart import dp
-from .wallet import dp
-from .catalog import dp
-from .delivery_status import dp
-from .sos import dp
+from aiogram import Router
+from aiogram.filters import Command
 
-__all__ = ['dp']
+import states
+from filters import IsUserFilter
+
+from . import menu
+
+
+def prepare_router() -> Router:
+    router = Router()
+    router.message.filter(IsUserFilter)
+    
+    # register handlers
+    router.message.register(menu.menu, Command('menu'))
+    
+    return router

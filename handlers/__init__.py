@@ -1,22 +1,19 @@
 from aiogram import Router
-from aiogram.filters import CommandStart, StateFilter
+from aiogram.filters import CommandStart
 
 import states
 
-from . import start
+from . import start, user, admin
 
 
 def prepare_router() -> Router:
-    basic_router = Router()
-    basic_router.message.register(start.start, CommandStart())
-    return basic_router
-
-
-def prepare_user_router() -> Router:
-    user_router = Router()
-    return user_router
-
-
-def prepare_admin_router() -> Router:
-    admin_router = Router()
-    return admin_router
+    router = Router()
+    
+    # register handlers
+    router.message.register(start.start, CommandStart())
+    
+    # register routers
+    router.include_router(user.prepare_router())
+    router.include_router(admin.prepare_router())
+    
+    return router
